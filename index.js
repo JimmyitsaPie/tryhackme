@@ -22,8 +22,8 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
     cors: {
-        origin: "https://itooka500mgedible.herokuapp.com",
-        methods: ["GET", "POST"]
+        origin: "*",
+   
     }
 });
 
