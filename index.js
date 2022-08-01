@@ -14,9 +14,7 @@ app.use(cors());
 app.use(express.static(path.join(__dirname, 'build')));
 
 
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname+'/build/index.html'));
-});
+
 
 const server = http.createServer(app);
 
@@ -168,6 +166,12 @@ io.on("connection", (socket) => {
       
     })
 })
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname+'/build/index.html'));
+});
+
+
 const port = process.env.PORT || 5000
 server.listen(port, () => {
     console.log("Server going")
